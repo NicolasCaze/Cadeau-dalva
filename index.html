@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="horizontal-timeline.css" id="timeline-css">
+</head>
+<body>
+    <div id="app">
+        <!-- Page d'accueil -->
+        <div id="home-page" class="page active">
+            <div class="container">
+                <div class="heart-decoration top-left"></div>
+                <div class="heart-decoration top-right"></div>
+                <div class="heart-decoration bottom-left"></div>
+                <div class="heart-decoration bottom-right"></div>
+                
+                <div class="main-content">
+                    <h1 class="birthday-title">
+                        <span class="line">Joyeux</span>
+                        <span class="line">Anniversaire</span>
+                        <span class="heart">❤️</span>
+                    </h1>
+                    
+                    <p class="subtitle">Mon amour</p>
+                    
+                    <button id="discover-btn" class="discover-button">
+                        Place à la suite
+                        <span class="button-heart">💝</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page QCM -->
+        <div id="quiz-page" class="page">
+            <div class="container">
+                <div id="quiz-intro" class="quiz-intro">
+                    <h2>Un petit jeu pour toi ❤️</h2>
+                    <p class="intro-message">
+                        <!-- Tu pourras personnaliser ce message -->
+                        Avant de découvrir ton cadeau,<br>
+                        Tu vas devoir répondre à quelques questions
+                    </p>
+                    <button id="start-quiz-btn" class="quiz-button">Commencer le jeu</button>
+                </div>
+
+                <div id="quiz-content" class="quiz-content hidden">
+                    <div class="quiz-progress">
+                        <span id="question-counter">Question 1/5</span>
+                    </div>
+                    
+                    <div id="question-card" class="question-card">
+                        <h3 id="question-text"></h3>
+                        <div id="answers-container" class="answers-container"></div>
+                        <button id="next-question-btn" class="quiz-button hidden">Question suivante</button>
+                    </div>
+                </div>
+
+                <div id="quiz-results" class="quiz-results hidden">
+                    <h2>Bravo mon amour ! ❤️</h2>
+                    <p class="score-text">Tu as eu <span id="final-score"></span> bonnes réponses !</p>
+                    <p class="win-message">Peu importe le score, tu gagnes toujours dans mon cœur 💕</p>
+                    <button id="final-gift-btn" class="quiz-button">Découvrir ton cadeau</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Page Frise Chronologique Horizontale -->
+        <div id="timeline-page" class="page">
+            <div class="timeline-page">
+                <h1 class="page-title" style="text-align: center; margin-bottom: 30px; color: #960018;">Notre histoire d'amour</h1>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-items">
+                        <!-- Événement 1 -->
+                        <div class="timeline-item" onclick="openModal('event1')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">27 Déc 2024</div>
+                                <div class="timeline-title">Notre rencontre</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <!-- Événement 2 -->
+                        <div class="timeline-item" onclick="openModal('event2')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">1 Fév 2025</div>
+                                <div class="timeline-title">Notre premier date</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        
+
+                        <!-- Événement 3 -->
+                        <div class="timeline-item" onclick="openModal('event3')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">2 Mai 2025</div>
+                                <div class="timeline-title">Notre Premier voyage</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <div class="timeline-item" onclick="openModal('event4')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">14 Avr 2025</div>
+                                <div class="timeline-title">Première photo à deux</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <!-- Événement 4 -->
+                        <div class="timeline-item" onclick="openModal('event5')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">24 Juin 2025</div>
+                                <div class="timeline-title">Le guet-apens</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <div class="timeline-item" onclick="openModal('event6')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">14 Juil 2025</div>
+                                <div class="timeline-title">Nous Sommes en couple!!</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <div class="timeline-item" onclick="openModal('event7')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">6 août 2025</div>
+                                <div class="timeline-title">Deuxième voyage</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <div class="timeline-item" onclick="openModal('event8')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">Septembre 2025</div>
+                                <div class="timeline-title">Tu squattes chez moi</div>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+
+                        <!-- Lettre d'amour -->
+                        <div class="timeline-item" onclick="openModal('love-letter')">
+                            <div class="timeline-item-content">
+                                <div class="timeline-date">Pour toi</div>
+                                <div class="timeline-title">Une lettre d'amour</div>
+                            </div>
+                            <div class="timeline-dot love-letter-dot">
+                                <span class="heart">❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="event1" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event1')">×</span>
+                <div class="modal-header">
+                    <h2>Notre rencontre</h2>
+                    <div class="modal-date">27 Décembre 2024</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event1.JPG" alt="Notre rencontre">
+                        <!-- Ajoutez d'autres images si nécessaire -->
+                    </div>
+                    <div class="modal-description">
+                        <p>Le jour de notre rencontre au Conemara Night Club. Merci à Pierre pour l'after et surtout merci pour ta grande communication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event2" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event2')">×</span>
+                <div class="modal-header">
+                    <h2>Notre premier date</h2>
+                    <div class="modal-date">1 Février 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event2.JPG" alt="Notre premier date">
+                    </div>
+                    <div class="modal-description">
+                        <p>Le moment où tout a vraiment démarré (merci Clara) </p>
+                        <p>(J'ai pas de photo du coup j'en ai mis une au hasard)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals pour les événements -->
+        <div id="event3" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event3')">×</span>
+                <div class="modal-header">
+                    <h2>Notre Premier voyage</h2>
+                    <div class="modal-date">2 Mai 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event3.jpg" alt="Notre premier voyage">
+                    </div>
+                    <div class="modal-description">
+                        <p>Voyager sur un coup de tête, ça a été la meilleure idée qu'on ait eue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event4" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event4')">×</span>
+                <div class="modal-header">
+                    <h2>Première photo à deux</h2>
+                    <div class="modal-date">14 Avril 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event4.JPG" alt="Notre première photo ensemble">
+                    </div>
+                    <div class="modal-description">
+                        <p>Le jour où tu es tombée amoureuse alalalala</p>
+                        <p>La demande en mariage a été tellement inattendu que tu es tombée sous le charme</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event5" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event5')">×</span>
+                <div class="modal-header">
+                    <h2>Le guet-apens</h2>
+                    <div class="modal-date">24 Juin 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event5.JPG" alt="Le guet-apens">
+                    </div>
+                    <div class="modal-description">
+                        <p>J'abuse en disant que c'était un guet-apens, c'était vraiment une super soirée</p>
+                        <p>Surtout première fois que je rencontre beau-papa et belle-maman haha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event6" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event6')">×</span>
+                <div class="modal-header">
+                    <h2>Nous Sommes en couple!!</h2>
+                    <div class="modal-date">14 Juillet 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event6.PNG" alt="Nous sommes en couple">
+                    </div>
+                    <div class="modal-description">
+                        <p>Le jour où tout est devenu officiel.</p>
+                        <p>C'était pas joué d'avance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event7" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event7')">×</span>
+                <div class="modal-header">
+                    <h2>Deuxième voyage</h2>
+                    <div class="modal-date">6 août 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event7.jpg" alt="Deuxième voyage">
+                    </div>
+                    <div class="modal-description">
+                        <p>Notre deuxième aventure ensemble, que de beaux souvenirs partagés ensemble dans ta région</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event8" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('event8')">×</span>
+                <div class="modal-header">
+                    <h2>Tu squattes chez moi</h2>
+                    <div class="modal-date">1 août 2025</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <img src="images/event8.JPG" alt="Chez moi">
+                    </div>
+                    <div class="modal-description">
+                        <p>Très bonne décision finalement, depuis on se lâche plus</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal pour la lettre d'amour -->
+        <div id="love-letter" class="modal">
+            <div class="modal-content" style="max-width: 800px;">
+                <span class="close-modal" onclick="closeModal('love-letter')">×</span>
+                <div class="modal-header" style="color: white;">
+                    <h2>Pour toi, mon amour ❤️</h2>
+                </div>
+                <div class="modal-body" style="padding: 40px; text-align: left; line-height: 1.8; font-size: 16px;">
+                    <p>Ma chérie,</p>
+                    
+                    <p>En ce jour si spécial, je voulais prendre le temps de t'écrire ces quelques mots pour te dire à quel point tu comptes pour moi. </p>
+                    
+                    <p>À travers cette frise temporelle, j'ai voulu retracer notre merveilleuse histoire, depuis notre rencontre jusqu'à aujourd'hui. Chaque point représente un souvenir précieux, un moment de bonheur partagé, une preuve de notre amour</p>
+                    
+                    <p>Tu es vraiment une personne incroyable, j'ai énormément de chance de t'avoir dans ma vie et en tant que copine.</p>
+                    
+                    <p>J'ai hâte de continuer à écrire notre histoire ensemble, de créer de nouveaux souvenirs et de vivre de nouvelles aventures à tes côtés.</p>
+                    
+                    <p>Je t'aime plus que tout au monde.</p>
+                    
+                    <p style="text-align: right; margin-top: 50px;">Ton amoureux</p>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <img src="images/event9.jpg" alt="Nous deux" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- Version stable de Babylon.js -->
+    <script>
+        // Navigation entre les pages et initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bouton "Découvrir le cadeau"
+            document.getElementById('discover-btn').addEventListener('click', function() {
+                showPage('quiz-page');
+                // Faire défiler jusqu'au début de la timeline
+                setTimeout(() => {
+                    document.querySelector('.quiz-page').scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            });
+            
+            
+            // Initialiser l'animation de la timeline
+            initTimelineAnimation();
+        });
+        
+        // Fonction pour l'animation de la timeline au défilement
+        function initTimelineAnimation() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Afficher les premiers éléments visibles
+            checkVisibleItems();
+            
+            // Ajouter un écouteur de défilement
+            const timelineContainer = document.querySelector('.timeline-page');
+            if (timelineContainer) {
+                timelineContainer.addEventListener('scroll', checkVisibleItems);
+            }
+            
+            // Vérifier quels éléments sont visibles
+            function checkVisibleItems() {
+                const windowHeight = window.innerHeight;
+                const scrollPosition = window.scrollY || window.pageYOffset;
+                
+                timelineItems.forEach(item => {
+                    const itemPosition = item.getBoundingClientRect().top + scrollPosition;
+                    const itemHeight = item.offsetHeight;
+                    
+                    // Si l'élément est dans la fenêtre visible
+                    if (itemPosition < (scrollPosition + windowHeight - 100) && 
+                        (itemPosition + itemHeight) > scrollPosition) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Vérifier aussi au redimensionnement de la fenêtre
+            window.addEventListener('resize', checkVisibleItems);
+        }
+
+        // Fonction pour afficher une page
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Afficher la page demandée
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Gestion des modales
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Empêcher le défilement
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Rétablir le défilement
+        }
+
+        // Fermer la modale en cliquant en dehors
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Fermer avec la touche Échap
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+    <script>
+        // Animation de la timeline au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Fonction pour vérifier si un élément est visible à l'écran
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Fonction pour gérer le défilement
+            function handleScroll() {
+                timelineItems.forEach(item => {
+                    if (isElementInViewport(item)) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Écouter l'événement de défilement
+            window.addEventListener('scroll', handleScroll);
+            
+            // Vérifier les éléments visibles au chargement
+            handleScroll();
+            
+            // Gérer le bouton de retour
+            document.getElementById('back-to-gift')?.addEventListener('click', () => {
+                showPage('gift-page');
+            });
+        });
+    </script>
+    </div>
+
+    <script>
+        // Script de débogage
+        console.log('=== DÉBOGAGE ===');
+        
+        // Vérifier si le CSS est chargé
+        const timelineCss = document.getElementById('timeline-css');
+        if (timelineCss) {
+            console.log('Fichier CSS trouvé dans le DOM');
+            
+            // Vérifier si le CSS est chargé
+            const isCssLoaded = () => {
+                const styleSheets = Array.from(document.styleSheets);
+                return styleSheets.some(sheet => {
+                    try {
+                        return sheet.href && sheet.href.includes('horizontal-timeline.css');
+                    } catch (e) {
+                        console.warn('Erreur lors de la vérification des feuilles de style:', e);
+                        return false;
+                    }
+                });
+            };
+            
+            console.log('CSS chargé ?', isCssLoaded() ? 'OUI' : 'NON');
+            
+            // Essayer de charger le CSS dynamiquement
+            const loadCssDynamically = () => {
+                console.log('Tentative de chargement dynamique du CSS...');
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'horizontal-timeline.css?' + new Date().getTime();
+                link.onload = () => console.log('CSS chargé avec succès!');
+                link.onerror = (e) => console.error('Erreur lors du chargement du CSS:', e);
+                document.head.appendChild(link);
+            };
+            
+            // Essayer de charger le CSS dynamiquement après un délai
+            setTimeout(loadCssDynamically, 1000);
+        } else {
+            console.error('La balise link pour le CSS est introuvable dans le DOM');
+        }
+        
+        // Afficher le contenu du body
+        console.log('Contenu du body:', document.body.innerHTML);
+    </script>
+    
+    <!-- Chargement du script principal -->
+
+</body>
+</html>
