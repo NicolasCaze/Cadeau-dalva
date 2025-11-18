@@ -16,7 +16,7 @@ const quizData = [
         correct: 2
     },
     {
-        question: "Qu'est ce que j'aime le plus chez toi",
+        question: "Qu'est ce que j'aime le plus chez toi ?",
         answers: ["Tes périodes de règle", "ton caractère", "Ton don pour la cuisine ", "Tout ça à la fois"],
         correct: 3
     },
